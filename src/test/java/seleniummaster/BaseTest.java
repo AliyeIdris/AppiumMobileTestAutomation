@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 /**
  * @author : user
@@ -33,6 +34,7 @@ public class BaseTest {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @AfterClass
     public void tearDown(){
