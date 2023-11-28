@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
  * @Email :aliyeidiris@gmail.com
  **/
 public class LongPressGesture extends BaseTest{
-
     @Test
     public void longPressGesture() throws InterruptedException {
         driver.findElement(AppiumBy.accessibilityId("Views")).click();
