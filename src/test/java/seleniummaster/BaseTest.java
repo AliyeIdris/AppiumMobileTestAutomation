@@ -34,7 +34,8 @@ public class BaseTest {
         service.start();
         UiAutomator2Options options=new UiAutomator2Options();
         options.setDeviceName("Aliyeemulator");
-        options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/java/seleniummaster/resources/ApiDemos-debug.apk");
+        //options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/java/seleniummaster/resources/ApiDemos-debug.apk");
+        options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/java/seleniummaster/resources/General-Store.apk");
         try {
             driver=new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         } catch (MalformedURLException e) {
