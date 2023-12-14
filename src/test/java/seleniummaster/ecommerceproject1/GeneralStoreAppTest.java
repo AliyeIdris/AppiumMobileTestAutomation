@@ -1,6 +1,7 @@
 package seleniummaster.ecommerceproject1;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import seleniummaster.BaseTest;
 
@@ -12,7 +13,7 @@ import seleniummaster.BaseTest;
 public class GeneralStoreAppTest extends BaseTest {
     @Test
     public void fillForm(){
-        driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Aliye Idris");
+        //driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Aliye Idris");
         driver.hideKeyboard();
         driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
         driver.findElement(By.id("android:id/text1")).click();
@@ -24,6 +25,9 @@ public class GeneralStoreAppTest extends BaseTest {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
+        //android.widget.Toast is a mandatory tag name for the android app development
+        //Toast message always have "name" attribute
+        String toastMessage=driver.findElement(By.xpath("//android.widget.Toast")).getAttribute("name");
+        Assert.assertEquals(toastMessage,"Please enter your name");
     }
 }
