@@ -1,4 +1,4 @@
-package seleniummaster.ecommerceproject1;
+package seleniummaster.generalstoreapptest;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -10,7 +10,7 @@ import seleniummaster.BaseTest;
  * @created : 8.12.2023,12:08
  * @Email :aliyeidiris@gmail.com
  **/
-public class GeneralStoreAppTest extends BaseTest {
+public class ToastMessageTest extends BaseTest {
     @Test
     public void fillForm(){
         //driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Aliye Idris");
