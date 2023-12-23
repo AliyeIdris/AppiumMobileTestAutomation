@@ -34,6 +34,7 @@ public class BaseTest {
         service.start();
         UiAutomator2Options options=new UiAutomator2Options();
         options.setDeviceName("Aliyeemulator");
+        options.setChromedriverExecutable("/Users/user/MyApplications/chromedriver");
         //options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/java/seleniummaster/resources/ApiDemos-debug.apk");
         options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/java/seleniummaster/resources/General-Store.apk");
         try {
