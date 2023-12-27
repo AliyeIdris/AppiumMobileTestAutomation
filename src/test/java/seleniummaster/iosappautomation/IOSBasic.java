@@ -1,5 +1,6 @@
 package seleniummaster.iosappautomation;
 
+import io.appium.java_client.AppiumBy;
 import org.testng.annotations.Test;
 
 /**
@@ -10,6 +11,8 @@ import org.testng.annotations.Test;
 public class IOSBasic extends IOSBaseTest{
     @Test
     public void IOSBasicsTest(){
+        //xpath, classname,accessibility id, id, IOS -> iosClassChain, IOSPredicateString
+        driver.findElement(AppiumBy.accessibilityId("Alert Views")).click();
 
     }
 }
