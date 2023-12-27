@@ -1,4 +1,4 @@
-package seleniummaster;
+package seleniummaster.androidappautomation;
 
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableMap;

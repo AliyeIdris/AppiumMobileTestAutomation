@@ -1,27 +1,23 @@
-package seleniummaster.generalstoreapptest;
+package seleniummaster.androidappautomation.generalstoreapptest;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import seleniummaster.BaseTest;
+import seleniummaster.androidappautomation.BaseTest;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author : user
  * @created : 8.12.2023,12:08
  * @Email :aliyeidiris@gmail.com
  **/
-public class DealingWithHybridApp extends BaseTest {
+public class ValidatingTotalAmount extends BaseTest {
     @Test
     public void completePurchase(){
         //fill the form
@@ -63,23 +59,12 @@ public class DealingWithHybridApp extends BaseTest {
         driver.findElement(AppiumBy.className("android.widget.CheckBox")).click();
         driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed")).click();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
         //Hybrid app--Google page
-        Set<String> contexts=driver.getContextHandles();
-        for(String contextName: contexts){
-            System.out.println(contextName);//to get the web view name
-        }
-        //switch to browser driver
-        driver.context("WEBVIEW_com.androidsample.generalstore"); //chrome driver
-        driver.findElement(By.name("q")).sendKeys("Iphone 13 Pro");
-        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-        driver.pressKey(new KeyEvent(AndroidKey.BACK));
-        //switch to app driver again
-        driver.context("NATIVE_APP");
 
     }
 }

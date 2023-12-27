@@ -1,9 +1,9 @@
-package seleniummaster.generalstoreapptest;
+package seleniummaster.androidappautomation.generalstoreapptest;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import seleniummaster.BaseTest;
+import seleniummaster.androidappautomation.BaseTest;
 
 /**
  * @author : user

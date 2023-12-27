@@ -1,4 +1,4 @@
-package seleniummaster.generalstoreapptest;
+package seleniummaster.androidappautomation.generalstoreapptest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
