@@ -3,6 +3,7 @@ package seleniummaster.iosappautomation;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -33,6 +34,16 @@ public class IOSScroll extends IOSBaseTest{
         //go back to home screen
         driver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeButton[`name == 'UIKitCatalog'`]")).click();
         driver.findElement(AppiumBy.accessibilityId("Picker View")).click();
+
+        WebElement redColorField=driver.findElement(AppiumBy.accessibilityId("Red color component value"));
+        redColorField.sendKeys("80");
+        WebElement greenColorField=driver.findElement(AppiumBy.iOSNsPredicateString("label=='Green color component value'"));
+        greenColorField.sendKeys("220");
+        WebElement blueColorField=driver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypePickerWheel[`name=='Blue color component value'`]"));
+        blueColorField.sendKeys("105");
+        String blueColorFieldText=blueColorField.getText();
+        Assert.assertEquals(blueColorFieldText,"105");
+
 
     }
 }
