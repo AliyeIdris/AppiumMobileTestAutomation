@@ -29,7 +29,8 @@ public class IOSBaseTest {
         service.start();
         XCUITestOptions options=new XCUITestOptions();
         options.setDeviceName("iPhone 12 Pro");
-        options.setApp("/Users/user/Desktop/UIKitCatalog.app");
+        //options.setApp("/Users/user/Desktop/UIKitCatalog.app");
+        options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/resources/TestApp 3.app");
         options.setPlatformVersion("17.2");
         //Appium -Webdriver Agent -> IOS Apps
         options.setWdaLaunchTimeout(Duration.ofSeconds(20));
