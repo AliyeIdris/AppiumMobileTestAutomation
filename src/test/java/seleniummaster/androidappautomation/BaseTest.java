@@ -33,7 +33,8 @@ public class BaseTest {
                 .withIPAddress("127.0.0.1").usingPort(4723).build();
         service.start();
         UiAutomator2Options options=new UiAutomator2Options();
-        options.setDeviceName("Aliyeemulator");
+        options.setDeviceName("Aliyeemulator"); //to run test on emulator
+        //options.setDeviceName("Android Device"); //to run test on real device
         options.setChromedriverExecutable("/Users/user/MyApplications/chromedriver");
         //options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/resources/ApiDemos-debug.apk");
         options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/java/seleniummaster/resources/General-Store.apk");
