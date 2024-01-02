@@ -1,50 +1,29 @@
-package seleniummaster.androidappautomation;
+package seleniummaster.utils;
 
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 
 /**
  * @author : user
- * @created : 25.11.2023,18:31
+ * @created : 2.01.2024,00:38
  * @Email :aliyeidiris@gmail.com
  **/
-public class BaseTest {
-    public AndroidDriver driver;
-    public AppiumDriverLocalService service;
-    @BeforeClass
-    public void configureAppium() {
-        service=new AppiumServiceBuilder()
-                .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-                .withIPAddress("127.0.0.1").usingPort(4723).build();
-        service.start();
-        UiAutomator2Options options=new UiAutomator2Options();
-        options.setDeviceName("Aliyeemulator"); //to run test on emulator
-        //options.setDeviceName("Android Device"); //to run test on real device
-        options.setChromedriverExecutable("/Users/user/MyApplications/chromedriver");
-        //options.setApp("/Users/user/IdeaProjects/AppiumMobileTesting/src/test/resources/ApiDemos-debug.apk");
-        options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/resources/General-Store.apk");
-        try {
-            driver=new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+public class AndroidActions {
+    AndroidDriver driver;
+
+    public AndroidActions(AndroidDriver driver) {
+        this.driver = driver;
     }
+
     public void longPressAction(WebElement element){
         ((JavascriptExecutor)driver).executeScript("mobile: longClickGesture",
                 ImmutableBiMap.of("elementId", ((RemoteWebElement)element).getId(),//RemoteWebElement casting recognize both webElement and mobile element
@@ -78,13 +57,12 @@ public class BaseTest {
                 "endY", endY
         ));
     }
+    public void waitForAttribute(WebElement element,String attribute,String value){
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.attributeContains(element,attribute,value));
+    }
     public Double getFormattedAmount(String amount){
         return Double.parseDouble(amount.substring(1));
 
-    }
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-        service.stop();
     }
 }
