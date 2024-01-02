@@ -25,6 +25,7 @@ public class AddProductToCart extends BaseTest {
         scrollToElement("Argentina");
         driver.findElement(By.xpath("//android.widget.TextView[@text='Argentina']")).click();
         driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
+
         scrollToElement("Jordan 6 Rings");
        // driver.findElement(By.xpath("//android.widget.TextView[@text='Jordan 6 Rings']")).click();
         int productCount=driver.findElements(By.id("com.androidsample.generalstore:id/productName")).size();

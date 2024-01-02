@@ -31,11 +31,11 @@ public class FormPage extends AndroidActions {
     @AndroidFindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
     private WebElement shopButton;
     public void setNameField(String name){
-        nameField.sendKeys();
+        nameField.sendKeys(name);
         driver.hideKeyboard();
     }
     public void setGender(String gender){
-        if (gender.contains("female"))
+        if (gender.contains("Female"))
             femaleCheckbox.click();
         else
             maleCheckbox.click();
@@ -45,7 +45,8 @@ public class FormPage extends AndroidActions {
         scrollToElement(countryName);
         driver.findElement(By.xpath("//android.widget.TextView[@text='"+countryName+"']")).click();
     }
-    public void submitForm(){
+    public ProductCatalogPage submitForm(){
         shopButton.click();
+        return new ProductCatalogPage(driver);
     }
 }

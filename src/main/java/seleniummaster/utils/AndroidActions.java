@@ -7,6 +7,10 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 /**
  * @author : user
@@ -52,6 +56,10 @@ public class AndroidActions {
                 "endX", endX,
                 "endY", endY
         ));
+    }
+    public void waitForAttribute(WebElement element,String attribute,String value){
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.attributeContains(element,attribute,value));
     }
     public Double getFormattedAmount(String amount){
         return Double.parseDouble(amount.substring(1));

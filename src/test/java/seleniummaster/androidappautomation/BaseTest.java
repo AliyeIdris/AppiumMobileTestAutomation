@@ -36,8 +36,8 @@ public class BaseTest {
         options.setDeviceName("Aliyeemulator"); //to run test on emulator
         //options.setDeviceName("Android Device"); //to run test on real device
         options.setChromedriverExecutable("/Users/user/MyApplications/chromedriver");
-        //options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/resources/ApiDemos-debug.apk");
-        options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/java/seleniummaster/resources/General-Store.apk");
+        //options.setApp("/Users/user/IdeaProjects/AppiumMobileTesting/src/test/resources/ApiDemos-debug.apk");
+        options.setApp("/Users/user/IdeaProjects/SamsungA51Application/src/test/resources/General-Store.apk");
         try {
             driver=new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         } catch (MalformedURLException e) {
