@@ -1,4 +1,4 @@
-package seleniummaster.iosappautomation;
+package seleniummaster.utils;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
@@ -6,6 +6,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import seleniummaster.pageobjects.ios.HomePage;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -22,6 +23,7 @@ public class IOSBaseTest {
     public IOSDriver driver;
     public AppiumDriverLocalService service;
     public XCUITestOptions options;
+    public HomePage homePage;
     @BeforeClass
     public void configureAppium() {
         service=new AppiumServiceBuilder()
@@ -41,6 +43,7 @@ public class IOSBaseTest {
             throw new RuntimeException(e);
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        homePage=new HomePage(driver);
     }
     @AfterClass
     public void tearDown(){

@@ -4,17 +4,17 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import seleniummaster.androidappautomation.BaseTest;
 import seleniummaster.pageobjects.android.CartPage;
 import seleniummaster.pageobjects.android.FormPage;
 import seleniummaster.pageobjects.android.ProductCatalogPage;
+import seleniummaster.utils.AndroidBaseTest;
 
 /**
  * @author : user
  * @created : 2.01.2024,10:27
  * @Email :aliyeidiris@gmail.com
  **/
-public class RunTest extends BaseTest {
+public class RunTest extends AndroidBaseTest {
     FormPage formPage;
     ProductCatalogPage catalogPage;
     CartPage cartPage;
