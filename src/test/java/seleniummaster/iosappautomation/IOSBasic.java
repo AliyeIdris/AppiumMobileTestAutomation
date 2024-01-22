@@ -28,9 +28,5 @@ public class IOSBasic extends IOSBaseTest{
         System.out.println(text);
 
         driver.findElement(AppiumBy.iOSNsPredicateString("name == 'Confirm'")).click();
-
-
-
-
     }
 }
